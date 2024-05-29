@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{%block body%}
+
+
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 style="font-size: 90px" class="title">
+        #{{ tag.title }}
+      </h1>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for post in posts %}
+  <div class="col">
+    <div class="card h-100">
+      <a href="{{ post.get_absolute_url }}"><img src="{{ post.picture.url }}" class="card-img-top" alt="Skyscrapers" /></a>
+      <div class="card-footer">
+        <small class="text-muted">{{post.posted}}</small>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  
+
+</div>
+
+{% endblock %}

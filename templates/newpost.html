@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block body%}
+
+<div class="card w-100 shadow-xss rounded-xxl border-0 ps-4 pt-4 pe-4 pb-3 mb-3">
+    <div class="card-body p-0">
+
+        <a href="#" class=" font-xssss fw-600 text-grey-500 card-body p-0 d-flex align-items-center"> <img src="" class="avatar me-3"><img style="height: 45px; border-radius: 50%; margin-right: 20px;" src="{{user.profile.picture.url}}" alt="image" class="shadow-sm rounded-circle w45"></i>Create Post</a>
+    </div>
+    <div class="card-body p-0 mt-3 position-relative">
+
+        <form method="POST" enctype="multipart/form-data" action="">
+            {% csrf_token %} 
+            
+            <a href="#" class="d-flex align-items-center font-xssss fw-600 ls-1 text-grey-700 text-dark pe-4"><i class="font-md text-success feather-image me-2"></i><span style="margin-right: 20px;"  class="d-none-xs">Photo/Video   </span>   {{form.picture}}</a>
+           
+            <br>
+            <a href="#" class="d-flex align-items-center font-xssss fw-600 ls-1 text-grey-700 text-dark pe-4"><i class="btn-round-sm font-xs text-primary feather-edit-3 me-2 bg-greylight"></i><span style="margin-right: 20px;" class="d-none-xs">Captions  </span>   {{form.caption}}</a>
+          
+            <a href="#" class="d-flex align-items-center font-xssss fw-600 ls-1 text-grey-700 text-dark pe-4"><i class="btn-round-sm font-xs text-primary feather-edit-3 me-2 bg-greylight"></i><span style="margin-right: 20px;"  class="d-none-xs">tags (seprate tags by commas , )</span>   {{form.tags}}</a>
+
+    </div>
+    <div class="col s12">
+        <span style="color: red; font-weight: bold;">{{ form.errors }}</span>
+      </div>
+    <button style="margin-top: 20px;" class=" d-lg-block bg-dark fw-500 text-white font-xsss p-2  w100 text-center lh-20 rounded-xl">Create</button>
+        
+      
+        </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{%endblock body%}
